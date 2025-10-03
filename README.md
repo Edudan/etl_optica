@@ -103,3 +103,84 @@ SELECT SUM(iva) AS iva_total FROM ventas;
 	•	Migrar de SQLite a PostgreSQL/MySQL para ambientes productivos.
 	•	Automatizar la ejecución con cron jobs o Airflow.
 
+
+¡De una 🔥! Te paso el flujo completo para clonar y correr tu proyecto en otra PC de forma limpia, usando un entorno virtual:
+
+⸻
+
+🔹 Paso 1: Clonar tu repo
+
+En la otra computadora, abre terminal y corre:
+
+git clone https://github.com/Edudan/etl_optica.git
+cd etl_optica
+
+
+⸻
+
+🔹 Paso 2: Crear un entorno virtual
+
+En la carpeta del proyecto:
+
+python3 -m venv venv
+
+Esto crea la carpeta venv/ con tu entorno virtual.
+
+⸻
+
+🔹 Paso 3: Activar el entorno virtual
+	•	En Mac/Linux:
+
+source venv/bin/activate
+
+	•	En Windows (PowerShell):
+
+venv\Scripts\Activate.ps1
+
+Cuando se active, verás algo así al inicio de tu línea:
+
+(venv) tu_usuario@pc:~/etl_optica$
+
+
+⸻
+
+🔹 Paso 4: Instalar dependencias
+
+Usando tu requirements.txt:
+
+pip install -r requirements.txt
+
+Esto instalará pandas (y demás si usaste pip freeze).
+
+⸻
+
+🔹 Paso 5: Ejecutar el ETL
+
+python main.py
+
+Esto hará:
+	1.	Leer tu CSV (extract).
+	2.	Limpiar datos (transform).
+	3.	Guardar en SQLite (load).
+
+⸻
+
+🔹 Paso 6: Ver resultados
+	•	Se generará data/optica.db automáticamente.
+	•	Puedes abrirlo con DB Browser for SQLite o con terminal:
+
+sqlite3 data/optica.db
+
+Y dentro:
+
+.tables
+SELECT * FROM ventas LIMIT 5;
+
+
+⸻
+
+✅ Con esto, en cualquier máquina puedes clonar, crear el entorno y ejecutar tu ETL sin problemas.
+
+⸻
+
+
