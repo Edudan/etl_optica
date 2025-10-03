@@ -10,4 +10,5 @@ if __name__ == "__main__":
     print("✅ Filas limpias:")
     print(df_clean.head())
     df_load = load_data(df_clean)
-    print("✅ Datos cargados en la base de datos")
+    print("✅ Datos cargados en la base de datos correctamente.")
+    
