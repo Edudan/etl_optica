@@ -1,0 +1,41 @@
+
+
+El requirements.txt sirve para que cualquiera pueda instalar exactamente las librerías que necesita tu proyecto.
+
+Como tu ETL usa pandas y sqlite3:
+	•	sqlite3 ya viene incluido en Python, así que no necesitas ponerlo en requirements.txt.
+	•	Lo único que hace falta es pandas.
+
+⸻
+
+📄 requirements.txt mínimo
+
+Crea el archivo en la raíz de tu proyecto (etl_optica/requirements.txt) con este contenido:
+
+pandas>=2.0.0
+
+
+⸻
+
+📄 requirements.txt más completo (si quieres congelar versiones exactas)
+
+Si quieres que en cualquier máquina se instale exactamente lo que tienes en tu entorno, puedes generar el archivo así:
+
+pip freeze > requirements.txt
+
+Eso te va a volcar algo como:
+
+numpy==2.1.1
+pandas==2.3.3
+python-dateutil==2.9.0
+pytz==2025.1
+six==1.16.0
+tzdata==2025.2
+
+
+⸻
+
+👉 Te recomiendo:
+	•	Si es un repo para portafolio y sencillo, usa el mínimo (pandas>=2.0.0).
+	•	Si es para que alguien lo replique igualito a tu máquina, usa el generado con pip freeze.
+
